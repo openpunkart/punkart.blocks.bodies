@@ -61,9 +61,7 @@ class TestBeer < MiniTest::Test
     puts "== parse( data ).each:"
     ## loop over records
     clazz2.parse( data ).each do |rec|
-      pp rec
-      puts "#{rec.class.name}"
-      puts " name: #{rec.name}, abv: #{rec.abv}, brewery: #{rec.brewery}, city: #{rec.city}"
+      puts "#{rec.name} (#{rec.abv}%) by #{rec.brewery}, #{rec.city}"
     end
 
     puts "== parse( txt ).to_a:"

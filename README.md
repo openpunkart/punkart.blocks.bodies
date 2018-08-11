@@ -23,7 +23,7 @@ Hacker-Pschorr Bräu,München,Münchner Dunkel,5.0%
 Staatliches Hofbräuhaus München,München,Hofbräu Oktoberfestbier,6.3%
 ```
 
-Step 1: Define a (typed) struct for the comma-separated values records. Example:
+Step 1: Define a (typed) struct for the comma-separated values (csv) records. Example:
 
 ```ruby
 require 'csvrecord'
@@ -32,7 +32,7 @@ Beer = CsvRecord.define do
   field :brewery        ## note: default type is :string
   field :city
   field :name
-  field :abv, Float    ## allows type specified as class (or use :float)
+  field :abv, Float     ## allows type specified as class (or use :float)
 end
 ```
 
@@ -64,7 +64,7 @@ pretty prints (pp):
     @brewery = "Bayerische Staatsbrauerei Weihenstephan",
     @city    = "Freising",
     @name    = "Hefe Weissbier">,
-  ...
+ ...
 ]
 ```
 
@@ -75,6 +75,18 @@ Beer.read( data ).each do |rec|
   puts "#{rec.name} (#{rec.abv}%) by #{rec.brewery}, #{rec.city}"
 end
 ```
+
+printing:
+
+```
+Doppelbock Dunkel (7.0%) by Andechser Klosterbrauerei, Andechs
+Edelstoff (5.6%) by Augustiner Bräu München, München
+Hefe Weissbier (5.4%) by Bayerische Staatsbrauerei Weihenstephan, Freising
+Rauchbier Märzen (5.1%) by Brauerei Spezial, Bamberg
+Münchner Dunkel (5.0%) by Hacker-Pschorr Bräu, München
+Hofbräu Oktoberfestbier (6.3%) by Staatliches Hofbräuhaus München, München
+```
+
 
 Or create new records from scratch. Example:
 
@@ -89,8 +101,8 @@ pp beer
 beer = Beer.new
 beer.update( abv: 12.7 )
 beer.update( brewery: 'Andechser Klosterbrauerei',
-             city:   'Andechs',
-             name:   'Doppelbock Dunkel' )
+             city:    'Andechs',
+             name:    'Doppelbock Dunkel' )
 
 # -or-
 
