@@ -79,6 +79,16 @@ class TestBeer < MiniTest::Test
     pp clazz2.class.name
     pp Beer.class.name
 
+    clazz2b = CsvRecord.define do |rec|   ## try "yield"-style dsl with block.arity == 1
+       rec.string :brewery
+       rec.string :city
+       rec.string :name
+       rec.float  :abv
+    end
+    pp clazz2b
+    pp clazz2b.class.name
+    pp clazz2b.fields
+
     assert true  ## assume ok if we get here
   end
 
@@ -101,6 +111,34 @@ class TestBeer < MiniTest::Test
     pp beers
 
     pp BeerClassic.fields
+    pp BeerClassic.field_names
+    pp BeerClassic.columns       ## try fields alias
+    pp BeerClassic.column_names  ## try field_names alias
+
+    assert_equal [:brewery, :city, :name, :abv], BeerClassic.field_names
+    assert_equal [String, String, String, Float], BeerClassic.field_types
+
+
+    assert_equal ['Andechser Klosterbrauerei',
+                  'Andechs',
+                  'Doppelbock Dunkel',
+                  7.0], beers[0].to_a     ## typed values
+
+    beer_hash = { brewery: 'Andechser Klosterbrauerei',
+                  city:    'Andechs',
+                  name:    'Doppelbock Dunkel',
+                  abv:     7.0 }
+    assert_equal beer_hash, beers[0].to_h     ## typed name/value pairs (hash)
+
+    assert_equal  ['Andechser Klosterbrauerei',
+                  'Andechs',
+                  'Doppelbock Dunkel',
+                  '7.0'], beers[0].values    ## all string values
+    assert_equal  ['Andechser Klosterbrauerei',
+                  'Andechs',
+                  'Doppelbock Dunkel',
+                  '7.0'], beers[0].to_csv  ## try to_csv alias
+
 
     beer = BeerClassic.new
     pp beer
@@ -151,10 +189,26 @@ class TestBeer < MiniTest::Test
                       name:   'Doppelbock Dunkel' )
     pp beer2
 
-    assert_equal nil, beer2.abv
+    assert_nil   beer2.abv
     assert_equal 'Andechser Klosterbrauerei', beer2.brewery
     assert_equal 'Andechs', beer2.city
     assert_equal 'Doppelbock Dunkel', beer2.name
+  end
+
+  def test_parse
+    values = ['Andechser Klosterbrauerei',
+              'Andechs',
+              'Doppelbock Dunkel',
+              '7.0']
+
+    beer = Beer.new
+    beer.parse( values )
+
+    assert_equal values,         beer.values
+    assert_equal values[0],      beer.brewery
+    assert_equal values[1],      beer.city
+    assert_equal values[2],      beer.name
+    assert_equal values[3].to_f, beer.abv
   end
 
 end # class TestBeer

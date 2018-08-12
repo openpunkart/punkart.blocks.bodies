@@ -11,22 +11,22 @@ class Builder  # check: rename to RecordDefinition or RecordDsl or similar - why
 
   def field( name, type=:string )   ## note: type defaults to string
     puts "  adding field >#{name}< with type >#{type}<"
-    @clazz.add_field( name, type )  ## auto-add getter and setter
+    @clazz.field( name, type )  ## auto-add getter and setter
   end
 
   def string( name )
     puts "  adding string field >#{name}<"
-    field( name, 'string' )
+    field( name, :string )
   end
 
-  def number( name )  ## use for alias for integer ???
-    puts "  adding number field >#{name}<"
-    field( name, 'number' )
+  def integer( name )  ## use number for alias for integer - why? why not???
+    puts "  adding integer number field >#{name}<"
+    field( name, :integer )
   end
 
   def float( name )
     puts "  adding float number field >#{name}<"
-    field( name, 'float' )
+    field( name, :float )
   end
 
 
