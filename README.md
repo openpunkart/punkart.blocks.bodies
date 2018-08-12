@@ -36,6 +36,18 @@ Beer = CsvRecord.define do
 end
 ```
 
+or in "classic" style:
+
+```ruby
+class Beer < CsvRecord::Base
+  field :brewery
+  field :city
+  field :name
+  field :abv, Float
+end
+```
+
+
 Step 2: Read in the comma-separated values (csv) datafile. Example:
 
 ```ruby

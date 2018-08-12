@@ -39,7 +39,7 @@ def self.fields   ## note: use class instance variable (@fields and NOT @@fields
 end
 
 
-def self.add_field( name, type )
+def self.field( name, type=:string )
 
   fields << Field.new( name, type )
 
@@ -55,6 +55,8 @@ def self.add_field( name, type )
     instance_variable_set( "@#{name}", self.class.typecast( value, type ) )
   end
 end
+def self.add_field( name, type ) field( name, type ); end  ## add alias for builder
+
 
 
 def self.typecast( value, type )

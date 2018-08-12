@@ -4,4 +4,9 @@ Manifest.txt
 README.md
 Rakefile
 lib/csvrecord.rb
+lib/csvrecord/base.rb
+lib/csvrecord/builder.rb
 lib/csvrecord/version.rb
+test/data/beer.csv
+test/helper.rb
+test/test_beer.rb

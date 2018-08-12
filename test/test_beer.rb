@@ -38,6 +38,14 @@ class TestBeer < MiniTest::Test
      float  :abv
   end
 
+  class BeerClassic < CsvRecord::Base
+    field :brewery
+    field :city
+    field :name
+    field :abv, Float
+  end
+
+
   def test_class_style2
     clazz2 = CsvRecord.define do
        string :brewery   # fix: do NOT use 'Brewery' - name SHOULD be a valid variable name
@@ -85,6 +93,29 @@ class TestBeer < MiniTest::Test
 
     assert true  ## assume ok if we get here
   end
+
+  def test_classic
+    puts "== read( data ).to_a:"
+    beers = BeerClassic.read( "#{CsvRecord.test_data_dir}/beer.csv" ).to_a
+    puts "#{beers.size} beers:"
+    pp beers
+
+    pp BeerClassic.fields
+
+    beer = BeerClassic.new
+    pp beer
+    beer.update( abv: 12.7 )
+    beer.update( brewery: 'Andechser Klosterbrauerei',
+                 city:   'Andechs',
+                 name:   'Doppelbock Dunkel' )
+    pp beer
+
+    assert_equal 12.7, beer.abv
+    assert_equal 'Andechser Klosterbrauerei', beer.brewery
+    assert_equal 'Andechs', beer.city
+    assert_equal 'Doppelbock Dunkel', beer.name
+  end
+
 
   def test_new
     beer = Beer.new
