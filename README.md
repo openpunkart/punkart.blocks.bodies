@@ -97,11 +97,11 @@ Or create new records from scratch. Example:
 beer = Beer.new( 'Andechser Klosterbrauerei',
                  'Andechs',
                  'Doppelbock Dunkel',
-                 '7.0%' )
+                 '7%' )
 
 # -or-
 
-values = ['Andechser Klosterbrauerei', 'Andechs', 'Doppelbock Dunkel', '7.0%']
+values = ['Andechser Klosterbrauerei', 'Andechs', 'Doppelbock Dunkel', '7%']
 beer = Beer.new( values )
 
 # -or-
@@ -109,14 +109,14 @@ beer = Beer.new( values )
 beer = Beer.new( brewery: 'Andechser Klosterbrauerei',
                  city:    'Andechs',
                  name:    'Doppelbock Dunkel',
-                 abv:     '7.0%' )
+                 abv:     '7%' )
 
 # -or-
 
 hash = { brewery: 'Andechser Klosterbrauerei',
          city:    'Andechs',
          name:    'Doppelbock Dunkel',
-         abv:     '7.0%' }
+         abv:     '7%' }
 beer = Beer.new( hash )
 
 
@@ -126,24 +126,24 @@ beer = Beer.new
 beer.update( brewery: 'Andechser Klosterbrauerei',
              city:    'Andechs',
              name:    'Doppelbock Dunkel' )
-beer.update( abv: 12.7 )
+beer.update( abv: 7.0 )
 
 # -or-
 
 beer = Beer.new
-beer.parse( ['Andechser Klosterbrauerei', 'Andechs', 'Doppelbock Dunkel', '7.0%'] )
+beer.parse( ['Andechser Klosterbrauerei', 'Andechs', 'Doppelbock Dunkel', '7%'] )
 
 # -or-
 
 beer = Beer.new
-beer.parse( 'Andechser Klosterbrauerei,Andechs,Doppelbock Dunkel,7.0%' )
+beer.parse( 'Andechser Klosterbrauerei,Andechs,Doppelbock Dunkel,7%' )
 
 # -or-
 
 beer = Beer.new
 beer.brewery = 'Andechser Klosterbrauerei'
 beer.name    = 'Doppelbock Dunkel'
-beer.abv     = 12.7
+beer.abv     = 7.0
 ```
 
 
