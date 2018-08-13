@@ -11,12 +11,17 @@ module CsvRecord
   class Field  ## ruby record class field
     attr_reader :name, :type
 
-    def initialize( name, type )
+    ## zero-based position index (0,1,2,3,...)
+    ## todo: use/rename to index/idx/pos - add an alias name - why?
+    attr_reader :num
+
+    def initialize( name, num, type )
       ## note: always symbol-ify (to_sym) name and type
 
       ## todo: add title or titles for header field/column title as is e.g. 'Team 1' etc.
       ##   incl. numbers only or even an empty header title
       @name = name.to_sym
+      @num  = num
 
       if type.is_a?( Class )
         @type = type    ## assign class to its own property - why? why not?
@@ -24,8 +29,34 @@ module CsvRecord
         @type = Type.registry[type.to_sym]
         if @type.nil?
           puts "!!!! warn unknown type >#{type}< - no class mapping found; add missing type to CsvRecord::Type.registry[]"
-          ## todo: fix raise exception!!!!
+          ## todo/fix:  raise exception!!!!
         end
+      end
+    end
+
+
+    def typecast( value )  ## cast (convert) from string value to type (e.g. float, integer, etc.)
+      ## todo: add typecast to class itself (monkey patch String/Float etc. - why? why not)
+      ##  use __typecast or something?
+      ##  or use a new "wrapper" class  Type::String or StringType - why? why not?
+
+      ## convert string value to (field) type
+      if @type == String
+        value   ## pass through as is
+      elsif @type == Float
+        ## note: allow/check for nil values - why? why not?
+        float = (value.nil? || value.empty?) ? nil : value.to_f
+        puts "typecast >#{value}< to float number >#{float}<"
+        float
+      elsif @type == Integer
+        number = (value.nil? || value.empty?) ? nil : value.to_i(10)   ## always use base10 for now (e.g. 010 => 10 etc.)
+        puts "typecast >#{value}< to integer number >#{number}<"
+        number
+      else
+        ## todo/fix: raise exception about unknow type
+        pp @type
+        puts "!!!! unknown type >#{@type}< - don't know how to convert/typecast string value >#{value}<"
+        value
       end
     end
   end  # class Field
@@ -91,7 +122,8 @@ end
 
 
 def self.field( name, type=:string )
-  field = Field.new( name, type )
+  num = fields.size  ## auto-calc num(ber) / position index - always gets added at the end
+  field = Field.new( name, num, type )
   fields << field
 
   define_field( field )  ## auto-add getter,setter,parse/typecast
@@ -99,18 +131,18 @@ end
 
 def self.define_field( field )
   name = field.name   ## note: always assumes a "cleaned-up" (symbol) name
-  type = field.type   ## note: always assumes a (class) type
+  num  = field.num
 
   define_method( name ) do
-    instance_variable_get( "@#{name}" )
+    instance_variable_get( "@values" )[num]
   end
 
   define_method( "#{name}=" ) do |value|
-    instance_variable_set( "@#{name}", value )
+    instance_variable_get( "@values" )[num] = value
   end
 
   define_method( "parse_#{name}") do |value|
-    instance_variable_set( "@#{name}", self.class.typecast( value, type ) )
+    instance_variable_get( "@values" )[num] = field.typecast( value )
   end
 end
 
@@ -122,29 +154,6 @@ def self.column_names() field_names; end
 def self.column_types() field_types; end
 
 
-
-def self.typecast( value, type )  ## cast (convert) from string value to type (e.g. float, integer, etc.)
-
-
-  ## convert string value to (field) type
-  if type == String
-     value   ## pass through as is
-  elsif type == Float
-    ## note: allow/check for nil values - why? why not?
-    float = (value.nil? || value.empty?) ? nil : value.to_f
-    puts "typecast >#{value}< to float number >#{float}<"
-    float
-  elsif type == Integer
-    number = (value.nil? || value.empty?) ? nil : value.to_i(10)   ## always use base10 for now (e.g. 010 => 10 etc.)
-    puts "typecast >#{value}< to integer number >#{number}<"
-    number
-  else
-    ## raise exception about unknow type
-    pp type
-    puts "!!!! unknown type >#{type}< - don't know how to convert/typecast string value >#{value}<"
-    value
-  end
-end
 
 
 def self.build_hash( values )   ## find a better name - build_attrib? or something?
@@ -158,36 +167,71 @@ end
 
 
 
-def parse( values )   ## use read (from array) or read_values or read_row - why? why not?
+def self.typecast( new_values )
+  values = []
+
+  ##
+  ## todo: check that new_values.size <= fields.size
+  ##
+  ##   fields without values will get auto-filled with nils (or default field values?)
+
+  ##
+  ##  use fields.zip( new_values ).map |field,value| ... instead - why? why not?
+  fields.each_with_index do |field,i|
+     value = new_values[i]   ## note: returns nil if new_values.size < fields.size
+     values << field.typecast( value )
+  end
+  values
+end
+
+
+def parse( new_values )   ## use read (from array) or read_values or read_row - why? why not?
+
+  ## todo: check if values overshadowing values attrib is ok (without warning?) - use just new_values (not values)
 
   ## todo/fix:
   ##  check if values is a string
   ##  use Csv.parse_line to convert to array
   ##  otherwise assume array of (string) values
-
-  h = self.class.build_hash( values )
-  update( h )
+  @values = self.class.typecast( new_values )
+  self  ## return self for chaining
 end
 
-def to_a
+
+def values
   ## return array of all record values (typed e.g. float, integer, date, ..., that is,
   ##   as-is and  NOT auto-converted to string
   ##  use to_csv or values for all string values)
-  self.class.fields.map { |field| send( field.name ) }
+  @values
 end
+
+
+
+def [](key)
+  if key.is_a? Integer
+    @values[ key ]
+  elsif key.is_a? Symbol
+    ## try attribute access
+    send( key )
+  else  ## assume string
+    ## downcase and symbol-ize
+    ##   remove spaces too -why? why not?
+    ##  todo/fix: add a lookup mapping for (string) titles (Team 1, etc.)
+    send( key.downcase.to_sym )
+  end
+end
+
+
 
 def to_h    ## use to_hash - why? why not?  - add attributes alias - why? why not?
-  self.class.build_hash( to_a )
+  self.class.build_hash( @values )
 end
 
 
-def values   ## use/rename/alias to to_row too - why? why not?
+def to_csv   ## use/rename/alias to to_row too - why? why not?
   ## todo/fix: check for date and use own date to string format!!!!
-  to_a.map{ |value| value.to_s }
+  @values.map{ |value| value.to_s }
 end
-## use values as to_csv alias
-## - reverse order? e.g. make to_csv an alias of value s- why? why not?
-alias_method :to_csv, :values
 
 
 
@@ -211,9 +255,8 @@ def self.parse( txt_or_rows )  ## note: returns an (lazy) enumarator
        ## pp row.to_hash
        ## fix/todo!!!!!!!!!!!!!
        ##  check for CSV::Row etc. - use row.to_hash ?
-       h = build_hash( row.fields )
-       ## pp h
-       rec = new( h )
+       rec = new
+       rec.parse( row.fields )
      ## end
      yielder.yield( rec )
     end
@@ -229,6 +272,7 @@ end
 
 
 def initialize( **kwargs )
+  @values = []
   update( kwargs )
 end
 

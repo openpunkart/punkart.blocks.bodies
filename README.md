@@ -61,21 +61,12 @@ pretty prints (pp):
 
 ```
 6 beers:
-[#<Beer:0x302c760
-    @abv     = 7.0,
-    @brewery = "Andechser Klosterbrauerei",
-    @city    = "Andechs",
-    @name    = "Doppelbock Dunkel">,
- #<Beer:0x3026fe8
-    @abv     = 5.6,
-    @brewery = "Augustiner Br\u00E4u M\u00FCnchen",
-    @city    = "M\u00FCnchen",
-    @name    = "Edelstoff">,
- #<Beer:0x30257a0
-    @abv     = 5.4,
-    @brewery = "Bayerische Staatsbrauerei Weihenstephan",
-    @city    = "Freising",
-    @name    = "Hefe Weissbier">,
+[#<Beer:0x302c760 @values=
+   ["Andechser Klosterbrauerei", "Andechs", "Doppelbock Dunkel", 7.0]>,
+ #<Beer:0x3026fe8 @values=
+   ["Augustiner Br\u00E4u M\u00FCnchen", "M\u00FCnchen", "Edelstoff", 5.6]>,
+ #<Beer:0x30257a0 @values=
+   ["Bayerische Staatsbrauerei Weihenstephan", "Freising", "Hefe Weissbier", 5.4]>,
  ...
 ]
 ```
@@ -103,28 +94,84 @@ Hofbräu Oktoberfestbier (6.3%) by Staatliches Hofbräuhaus München, München
 Or create new records from scratch. Example:
 
 ``` ruby
+beer = Beer.new( 'Andechser Klosterbrauerei',
+                 'Andechs',
+                 'Doppelbock Dunkel',
+                 '7.0%' )
+
+# -or-
+
+values = ['Andechser Klosterbrauerei', 'Andechs', 'Doppelbock Dunkel', '7.0%']
+beer = Beer.new( values )
+
+# -or-
+
 beer = Beer.new( brewery: 'Andechser Klosterbrauerei',
                  city:    'Andechs',
-                 name:    'Doppelbock Dunkel' )
-pp beer
+                 name:    'Doppelbock Dunkel',
+                 abv:     '7.0%' )
+
+# -or-
+
+hash = { brewery: 'Andechser Klosterbrauerei',
+         city:    'Andechs',
+         name:    'Doppelbock Dunkel',
+         abv:     '7.0%' }
+beer = Beer.new( hash )
+
 
 # -or-
 
 beer = Beer.new
-beer.update( abv: 12.7 )
 beer.update( brewery: 'Andechser Klosterbrauerei',
              city:    'Andechs',
              name:    'Doppelbock Dunkel' )
+beer.update( abv: 12.7 )
 
 # -or-
 
-beer.abv     = 12.7
-beer.name    = 'Doppelbock Dunkel'
+beer = Beer.new
+beer.parse( ['Andechser Klosterbrauerei', 'Andechs', 'Doppelbock Dunkel', '7.0%'] )
+
+# -or-
+
+beer = Beer.new
+beer.parse( 'Andechser Klosterbrauerei,Andechs,Doppelbock Dunkel,7.0%' )
+
+# -or-
+
+beer = Beer.new
 beer.brewery = 'Andechser Klosterbrauerei'
+beer.name    = 'Doppelbock Dunkel'
+beer.abv     = 12.7
 ```
 
 
 And so on. That's it.
+
+
+## Frequently Asked Questions (FAQs) and Answers
+
+### Q: What about ActiveRecord models? Why not inherit from ActiveRecord::Base so you get the SQL relational database magic / machinery for "free"?
+
+Good point. `CsvRecord` and `ActiveRecord` are different.
+`ActiveRecord` has its own
+database schema / attributes. Using [`CsvPack` - the tabular data
+package](https://github.com/csv11/csvpack) you can, however, for your convenience auto-generate
+`ActiveRecord` model classes
+and `ActiveRecord` schema migrations (that is, tables and indices, etc.)
+from the tabular
+datapackage schema (in the JSON Schema format).
+That was kind of the start of the
+exercise :-), that is, the genesis for building `CsvRecord`
+in the first place.
+
+To sum up - use `CsvRecord` for comma-separated values (csv) data
+imports or data "wrangling"
+and use `ActiveRecord` for SQL queries / analysis and more. In the
+good old unix tradition - the work together but have its own (limited
+/ focused) purpose.
+
 
 
 

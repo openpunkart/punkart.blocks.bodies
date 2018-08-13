@@ -122,7 +122,7 @@ class TestBeer < MiniTest::Test
     assert_equal ['Andechser Klosterbrauerei',
                   'Andechs',
                   'Doppelbock Dunkel',
-                  7.0], beers[0].to_a     ## typed values
+                  7.0], beers[0].values     ## typed values
 
     beer_hash = { brewery: 'Andechser Klosterbrauerei',
                   city:    'Andechs',
@@ -133,11 +133,7 @@ class TestBeer < MiniTest::Test
     assert_equal  ['Andechser Klosterbrauerei',
                   'Andechs',
                   'Doppelbock Dunkel',
-                  '7.0'], beers[0].values    ## all string values
-    assert_equal  ['Andechser Klosterbrauerei',
-                  'Andechs',
-                  'Doppelbock Dunkel',
-                  '7.0'], beers[0].to_csv  ## try to_csv alias
+                  '7.0'], beers[0].to_csv  ## try to_csv all string values
 
 
     beer = BeerClassic.new
@@ -204,11 +200,31 @@ class TestBeer < MiniTest::Test
     beer = Beer.new
     beer.parse( values )
 
-    assert_equal values,         beer.values
+    assert_equal values,         beer.to_csv
     assert_equal values[0],      beer.brewery
     assert_equal values[1],      beer.city
     assert_equal values[2],      beer.name
     assert_equal values[3].to_f, beer.abv
+
+    assert_equal values[0],      beer[0]
+    assert_equal values[1],      beer[1]
+    assert_equal values[2],      beer[2]
+    assert_equal values[3].to_f, beer[3]
+
+    assert_equal values[0],      beer.values[0]
+    assert_equal values[1],      beer.values[1]
+    assert_equal values[2],      beer.values[2]
+    assert_equal values[3].to_f, beer.values[3]
+
+    assert_equal values[0],      beer[:brewery]
+    assert_equal values[1],      beer[:city]
+    assert_equal values[2],      beer[:name]
+    assert_equal values[3].to_f, beer[:abv]
+
+    assert_equal values[0],      beer['Brewery']
+    assert_equal values[1],      beer['City']
+    assert_equal values[2],      beer['Name']
+    assert_equal values[3].to_f, beer['Abv']
   end
 
 end # class TestBeer
