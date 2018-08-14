@@ -100,6 +100,40 @@ module CsvRecord
   end
 
 
+   ###########################################
+   ## "magic" lazy auto-build schema from headers versions
+
+   def self.build_class( headers )   ## check: find a better name - why? why not?
+     ## (auto-)build record class from an array of headers
+     ##   add fields (all types will be string for now)
+     clazz = Class.new(Base)
+     headers.each do |header|
+       ## downcase and remove all non-ascii chars etc.
+       ##  todo/fix: remove all non-ascii chars!!!
+       ##  todo: check if header starts with a number too!!
+       name = header.downcase.gsub( ' ', '_' )
+       name = name.to_sym   ## symbol-ify
+       clazz.field( name )
+     end
+     clazz
+   end
+
+   def self.read( path, sep: Csv.config.sep )
+     headers = CsvReader.header( path, sep: sep )
+
+     clazz = build_class( headers )
+     clazz.read( path, sep: sep )
+   end
+
+   def self.foreach( path, sep: Csv.config.sep, &block )
+     headers = CsvReader.header( path, sep: sep )
+
+     clazz = build_class( headers )
+     clazz.foreach( path, sep: sep, &block )
+   end
+
+
+
 
 class Base
 
@@ -234,11 +268,21 @@ def to_csv   ## use/rename/alias to to_row too - why? why not?
 end
 
 
+def self.foreach( path, sep: Csv.config.sep, headers: true )
+  CsvReader.foreach( path, sep: sep, headers: headers ) do |row|
+    rec = new
+    values = CsvReader.unwrap( row )
+    rec.parse( values )
 
-def self.parse( txt_or_rows )  ## note: returns an (lazy) enumarator
+    yield( rec )    ## check: use block.class( rec ) - why? why not?
+  end
+end
+
+
+def self.parse( txt_or_rows, sep: Csv.config.sep, headers: true )  ## note: returns an (lazy) enumarator
   if txt_or_rows.is_a? String
     txt = txt_or_rows
-    rows = CSV.parse( txt, headers: true )
+    rows = CsvReader.parse( txt, sep: sep, headers: headers )
   else
     ### todo/fix: use only self.create( array-like ) for array-like data  - why? why not?
     rows = txt_or_rows    ## assume array-like records that responds to :each
@@ -248,25 +292,19 @@ def self.parse( txt_or_rows )  ## note: returns an (lazy) enumarator
 
   Enumerator.new do |yielder|
     rows.each do |row|
-     ## check - check for to_h - why? why not?  supported/built-into by CSV::Row??
-     ## if row.respond_to?( :to_h )
-     ## else
-       ## pp row.fields
-       ## pp row.to_hash
-       ## fix/todo!!!!!!!!!!!!!
-       ##  check for CSV::Row etc. - use row.to_hash ?
-       rec = new
-       rec.parse( row.fields )
-     ## end
-     yielder.yield( rec )
+      rec = new
+      values = CsvReader.unwrap( row )
+      rec.parse( values )
+
+      yielder.yield( rec )
     end
   end
 end
 
 
-def self.read( path )  ## not returns an enumarator
+def self.read( path, sep: Csv.config.sep, headers: true )  ## not returns an enumarator
   txt  = File.open( path, 'r:utf-8' ).read
-  parse( txt )
+  parse( txt, sep: sep, headers: headers )
 end
 
 

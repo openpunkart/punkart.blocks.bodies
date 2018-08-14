@@ -10,6 +10,7 @@ require 'pp'
 require 'csvrecord/version' # let version always go first
 require 'csvrecord/base'
 require 'csvrecord/builder'
+require 'csvrecord/reader'
 
 
 

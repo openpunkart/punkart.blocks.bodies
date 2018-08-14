@@ -2,21 +2,12 @@
 
 ###
 #  to run use
-#     ruby -I ./lib -I ./test test/test_beer.rb
+#     ruby -I ./lib -I ./test test/test_record.rb
 
 
 require 'helper'
 
-class TestBeer < MiniTest::Test
-
-  def test_version
-    pp CsvRecord::VERSION
-    pp CsvRecord.banner
-    pp CsvRecord.root
-
-    assert true  ## assume ok if we get here
-  end
-
+class TestRecord < MiniTest::Test
 
   def test_class_style1
      clazz1 = CsvRecord.define do
@@ -103,6 +94,35 @@ class TestBeer < MiniTest::Test
 
     assert true  ## assume ok if we get here
   end
+
+
+  def test_foreach
+    puts "== foreach:"
+    Beer.foreach( "#{CsvRecord.test_data_dir}/beer.csv" ) do |rec|
+      puts "#{rec.name} (#{rec.abv}%) by #{rec.brewery}, #{rec.city}"
+    end
+
+    assert true  ## assume ok if we get here
+  end
+
+
+  def test_parse_array_or_arrays
+    data=[
+      ['Brewery','City','Name','Abv'],
+      ['Andechser Klosterbrauerei','Andechs','Doppelbock Dunkel','7%'],
+      ['Augustiner Bräu München','München','Edelstoff','5.6%'],
+      ['Bayerische Staatsbrauerei Weihenstephan','Freising','Hefe Weissbier','5.4%'],
+      ['Brauerei Spezial','Bamberg','Rauchbier Märzen','5.1%'],
+      ['Hacker-Pschorr Bräu','München','Münchner Dunkel','5.0%'],
+      ['Staatliches Hofbräuhaus München','München','Hofbräu Oktoberfestbier','6.3%']]
+
+    beers = Beer.parse( data ).to_a
+    puts "#{beers.size} beers:"
+    pp beers
+
+    assert true  ## assume ok if we get here
+  end
+
 
   def test_classic
     puts "== read( data ).to_a:"
@@ -227,4 +247,4 @@ class TestBeer < MiniTest::Test
     assert_equal values[3].to_f, beer['Abv']
   end
 
-end # class TestBeer
+end # class TestRecord

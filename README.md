@@ -74,10 +74,17 @@ pretty prints (pp):
 Or loop over the records. Example:
 
 ``` ruby
-Beer.read( data ).each do |rec|
+Beer.read( 'beer.csv' ).each do |rec|
+  puts "#{rec.name} (#{rec.abv}%) by #{rec.brewery}, #{rec.city}"
+end
+
+# -or-
+
+Beer.foreach( 'beer.csv' ) do |rec|
   puts "#{rec.name} (#{rec.abv}%) by #{rec.brewery}, #{rec.city}"
 end
 ```
+
 
 printing:
 
