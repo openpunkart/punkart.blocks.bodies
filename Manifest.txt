@@ -5,7 +5,6 @@ README.md
 Rakefile
 lib/csvrecord.rb
 lib/csvrecord/base.rb
-lib/csvrecord/builder.rb
 lib/csvrecord/version.rb
 test/data/beer.csv
 test/data/beer11.csv
