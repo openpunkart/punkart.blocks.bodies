@@ -5,7 +5,7 @@ module CsvRecord
 
   MAJOR = 0    ## todo: namespace inside version or something - why? why not??
   MINOR = 4
-  PATCH = 0
+  PATCH = 1
   VERSION = [MAJOR,MINOR,PATCH].join('.')
 
 
@@ -21,4 +21,4 @@ module CsvRecord
     File.expand_path( File.dirname(File.dirname(File.dirname(__FILE__))) )
   end
 
-end # class CsvRecord
+end # module CsvRecord

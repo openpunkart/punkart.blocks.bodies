@@ -18,6 +18,7 @@ Hoe.spec 'csvrecord' do
   self.history_file = 'HISTORY.md'
 
   self.extra_deps = [
+     ['record',     '>=1.1.1'],
      ['csvreader']
    ]
 
