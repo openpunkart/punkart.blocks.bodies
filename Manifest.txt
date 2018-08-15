@@ -6,12 +6,10 @@ Rakefile
 lib/csvrecord.rb
 lib/csvrecord/base.rb
 lib/csvrecord/builder.rb
-lib/csvrecord/reader.rb
 lib/csvrecord/version.rb
 test/data/beer.csv
 test/data/beer11.csv
 test/helper.rb
-test/test_reader.rb
 test/test_record.rb
 test/test_record_auto.rb
 test/test_version.rb

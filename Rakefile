@@ -14,8 +14,12 @@ Hoe.spec 'csvrecord' do
   self.email = 'wwwmake@googlegroups.com'
 
   # switch extension to .markdown for gihub formatting
-  self.readme_file = 'README.md'
+  self.readme_file  = 'README.md'
   self.history_file = 'HISTORY.md'
+
+  self.extra_deps = [
+     ['csvreader']
+   ]
 
   self.licenses = ['Public Domain']
 
