@@ -19,7 +19,7 @@ Hoe.spec 'csvrecord' do
 
   self.extra_deps = [
      ['record',     '>=1.1.1'],
-     ['csvreader']
+     ['csvreader',  '>=0.3.0']
    ]
 
   self.licenses = ['Public Domain']

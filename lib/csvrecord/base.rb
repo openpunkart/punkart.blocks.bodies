@@ -9,12 +9,20 @@ module CsvRecord
 class Base < Record::Base
 
 def self.foreach( path, sep: Csv.config.sep, headers: true )
-  CsvReader.foreach( path, sep: sep, headers: headers ) do |row|
-    rec = new
-    values = CsvReader.unwrap( row )
-    rec.parse( values )
 
-    yield( rec )    ## check: use block.class( rec ) - why? why not?
+  ## note: always use reader w/o headers to get row/record values as array of strings
+  ##   if headers: true -> skip first row
+  names = nil
+
+  CsvReader.foreach( path, sep: sep, headers: false ) do |row|
+    if headers && names.nil?
+      names = row   ## store header row / a.k.a. field/column names
+    else
+      rec = new
+      rec.parse( row )
+
+      yield( rec )    ## check: use block.class( rec ) - why? why not?
+    end
   end
 end
 
@@ -22,21 +30,29 @@ end
 def self.parse( txt_or_rows, sep: Csv.config.sep, headers: true )  ## note: returns an (lazy) enumarator
   if txt_or_rows.is_a? String
     txt = txt_or_rows
-    rows = CsvReader.parse( txt, sep: sep, headers: headers )
+    ## note: always use reader w/o headers to get row/record values as array of strings
+    ##   if headers: true -> skip first row
+    rows = CsvReader.parse( txt, sep: sep, headers: false )
   else
     ### todo/fix: use only self.create( array-like ) for array-like data  - why? why not?
-    rows = txt_or_rows    ## assume array-like records that responds to :each
+    rows = txt_or_rows
   end
 
-  pp rows
+  ## pp rows
+
+
+  names = nil
 
   Enumerator.new do |yielder|
     rows.each do |row|
-      rec = new
-      values = CsvReader.unwrap( row )
-      rec.parse( values )
+      if headers && names.nil?
+        names = row   ## store header row / a.k.a. field/column names
+      else
+        rec = new
+        rec.parse( row )
 
-      yielder.yield( rec )
+        yielder.yield( rec )
+      end
     end
   end
 end
@@ -55,6 +71,7 @@ def to_csv   ## use/rename/alias to to_row too - why? why not?
 end
 
 end # class Base
+
 
 
 
