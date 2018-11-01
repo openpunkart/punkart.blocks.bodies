@@ -12,4 +12,5 @@ require 'csvrecord/version' # let version always go first
 require 'csvrecord/base'
 
 
-puts CsvRecord.banner   # say hello
+# say hello
+puts CsvRecord.banner     if $DEBUG || (defined?($RUBYCOCO_DEBUG) && $RUBYCOCO_DEBUG)
