@@ -49,7 +49,7 @@ class TestRecord < MiniTest::Test
     pp clazz2.fields
 
     txt  = File.open( "#{CsvRecord.test_data_dir}/beer.csv", 'r:utf-8' ).read
-    data = CSV.parse( txt, headers: true )
+    data = CsvReader.parse( txt )
     pp data
     pp data.to_a   ## note: includes header (first row with field names)
 

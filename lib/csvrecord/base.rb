@@ -8,13 +8,13 @@ module CsvRecord
 
 class Base < Record::Base
 
-def self.foreach( path, sep: Csv.config.sep, headers: true )
+def self.foreach( path, sep: nil, headers: true )
 
   ## note: always use reader w/o headers to get row/record values as array of strings
   ##   if headers: true -> skip first row
   names = nil
 
-  CsvReader.foreach( path, sep: sep, headers: false ) do |row|
+  CsvReader.foreach( path, sep: sep ) do |row|
     if headers && names.nil?
       names = row   ## store header row / a.k.a. field/column names
     else
@@ -27,12 +27,14 @@ def self.foreach( path, sep: Csv.config.sep, headers: true )
 end
 
 
-def self.parse( txt_or_rows, sep: Csv.config.sep, headers: true )  ## note: returns an (lazy) enumarator
+
+
+def self.parse( txt_or_rows, sep: nil, headers: true )  ## note: returns an (lazy) enumarator
   if txt_or_rows.is_a? String
     txt = txt_or_rows
     ## note: always use reader w/o headers to get row/record values as array of strings
     ##   if headers: true -> skip first row
-    rows = CsvReader.parse( txt, sep: sep, headers: false )
+    rows = CsvReader.parse( txt, sep: sep )
   else
     ### todo/fix: use only self.create( array-like ) for array-like data  - why? why not?
     rows = txt_or_rows
@@ -58,7 +60,7 @@ def self.parse( txt_or_rows, sep: Csv.config.sep, headers: true )  ## note: retu
 end
 
 
-def self.read( path, sep: Csv.config.sep, headers: true )  ## not returns an enumarator
+def self.read( path, sep: nil, headers: true )  ## not returns an enumarator
   txt  = File.open( path, 'r:utf-8' ).read
   parse( txt, sep: sep, headers: headers )
 end
@@ -94,14 +96,14 @@ def self.build_class( headers )   ## check: find a better name - why? why not?
   clazz
 end
 
-def self.read( path, sep: Csv.config.sep )
+def self.read( path, sep: nil )
   headers = CsvReader.header( path, sep: sep )
 
   clazz = build_class( headers )
   clazz.read( path, sep: sep )
 end
 
-def self.foreach( path, sep: Csv.config.sep, &block )
+def self.foreach( path, sep: nil, &block )
   headers = CsvReader.header( path, sep: sep )
 
   clazz = build_class( headers )

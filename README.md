@@ -1,8 +1,8 @@
 # csvrecord - read in comma-separated values (csv) records with typed structs / schemas
 
 
-* home  :: [github.com/csv11/csvrecord](https://github.com/csv11/csvrecord)
-* bugs  :: [github.com/csv11/csvrecord/issues](https://github.com/csv11/csvrecord/issues)
+* home  :: [github.com/csvreader/csvrecord](https://github.com/csvreader/csvrecord)
+* bugs  :: [github.com/csvreader/csvrecord/issues](https://github.com/csvreader/csvrecord/issues)
 * gem   :: [rubygems.org/gems/csvrecord](https://rubygems.org/gems/csvrecord)
 * rdoc  :: [rubydoc.info/gems/csvrecord](http://rubydoc.info/gems/csvrecord)
 * forum :: [wwwmake](http://groups.google.com/group/wwwmake)
@@ -164,7 +164,7 @@ And so on. That's it.
 Good point. `CsvRecord` and `ActiveRecord` are different.
 `ActiveRecord` has its own
 database schema / attributes. Using [`CsvPack` - the tabular data
-package](https://github.com/csv11/csvpack) you can, however, for your convenience auto-generate
+package](https://github.com/csvreader/csvpack) you can, however, for your convenience auto-generate
 `ActiveRecord` model classes
 and `ActiveRecord` schema migrations (that is, tables and indices, etc.)
 from the tabular
@@ -184,7 +184,7 @@ good old unix tradition - the work together but have its own (limited
 
 ## Alternatives
 
-See the Libraries & Tools section in the [Awesome CSV](https://github.com/csv11/awesome-csv#libraries--tools) page.
+See the Libraries & Tools section in the [Awesome CSV](https://github.com/csvspecs/awesome-csv#libraries--tools) page.
 
 
 ## License

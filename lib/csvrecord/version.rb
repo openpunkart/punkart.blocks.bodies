@@ -3,10 +3,14 @@
 
 module CsvRecord
 
-  MAJOR = 0    ## todo: namespace inside version or something - why? why not??
-  MINOR = 4
-  PATCH = 2
-  VERSION = [MAJOR,MINOR,PATCH].join('.')
+  module Version
+    MAJOR = 0
+    MINOR = 4
+    PATCH = 3
+  end
+  VERSION = [Version::MAJOR,
+             Version::MINOR,
+             Version::PATCH].join('.')
 
 
   def self.version
