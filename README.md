@@ -3,7 +3,57 @@
 
 
 
-## Legal  & Financial (Con-Art) Fraud
+
+## Pixel Art Programming
+
+### **Q**: How can I generate 10 000 left-looking p(h)unks in any size (2x, 4x, 8x, etc.) individually, that is, one-by-one?
+
+See [**Free Phunks Composite Download (~800k) - Get All 10 000 Left-Looking ("Mirrored") CryptoPunks In An All-In-One Image (2400x2400)**](https://old.reddit.com/r/CryptoPunksDev/comments/orv98e/free_phunks_composite_download_800k_get_all_10/) 
+for a start and change the loop in the [**phunks script**](https://github.com/cryptopunksnotdead/cryptopunks/blob/master/phunks/phunks.rb) from
+
+``` ruby
+punks.each do |punk|
+  phunks << punk.mirror    #¹ 
+end
+```
+
+to save the phunks one-by-one in 24x24 and in 192x192 (with 8x zoom) try:
+
+``` ruby
+punks.each_with_index do |punk,i|
+  phunk = punk.mirror  
+  phunk.save( "phunk-#{i}.png" )
+  phunk.zoom(8).save( "phunk-#{i}@8x.png" )
+
+  phunks << phunk  ## add to composite       
+end
+```
+
+(Re)run the script and voila - you will get 20 000 phunk images in two series in the 24x24 and 192x192 (with 8x zoom) format e.g.  `phunk-0.png`, `phunk-0@8x.png`, `phunk-1.png`, `phunk-1@8x.png`, and so on.
+
+1:  The `Image#mirror` method flips the image vertically (right-facing to left-facing).
+
+<!--
+https://old.reddit.com/r/CryptoPunksDev/comments/s4hyny/q_how_can_i_generate_10_000_leftlooking_phunks_in/
+-->
+
+
+### Q: Is there a way to specify the tile width and height for ImageComposite (rather that the default 24 pixels)?
+
+Yes, you can pass along the width and height (as optional) keyword arguments e.g.
+
+``` ruby
+ImageComposite.new( 3, 2,  width: 32, height: 32 )   # 3x2 grid with 32x32px tiles
+```
+
+<!--
+https://old.reddit.com/r/CryptoPunksDev/comments/rzqipr/compositeimage_from_pixelart/
+-->
+
+
+
+
+## Legal & Financial (Con-Art) Fraud
 
 ### Q: Am I allowed to create and sell my own [Crypto] Punks?
 
@@ -55,54 +105,6 @@ comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/pjl8vw/am_i_allow
 
 <!--
 comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/ppb0fh/public_service_announcement_yes_cryptopunks_is_a/
--->
-
-
-
-## Pixel Art Programming
-
-### **Q**: How can I generate 10 000 left-looking p(h)unks in any size (2x, 4x, 8x, etc.) individually, that is, one-by-one?
-
-See [**Free Phunks Composite Download (~800k) - Get All 10 000 Left-Looking ("Mirrored") CryptoPunks In An All-In-One Image (2400x2400)**](https://old.reddit.com/r/CryptoPunksDev/comments/orv98e/free_phunks_composite_download_800k_get_all_10/) 
-for a start and change the loop in the [**phunks script**](https://github.com/cryptopunksnotdead/cryptopunks/blob/master/phunks/phunks.rb) from
-
-``` ruby
-punks.each do |punk|
-  phunks << punk.mirror    #¹ 
-end
-```
-
-to save the phunks one-by-one in 24x24 and in 192x192 (with 8x zoom) try:
-
-``` ruby
-punks.each_with_index do |punk,i|
-  phunk = punk.mirror  
-  phunk.save( "phunk-#{i}.png" )
-  phunk.zoom(8).save( "phunk-#{i}@8x.png" )
-
-  phunks << phunk  ## add to composite       
-end
-```
-
-(Re)run the script and voila - you will get 20 000 phunk images in two series in the 24x24 and 192x192 (with 8x zoom) format e.g.  `phunk-0.png`, `phunk-0@8x.png`, `phunk-1.png`, `phunk-1@8x.png`, and so on.
-
-1:  The `Image#mirror` method flips the image vertically (right-facing to left-facing).
-
-<!--
-https://old.reddit.com/r/CryptoPunksDev/comments/s4hyny/q_how_can_i_generate_10_000_leftlooking_phunks_in/
--->
-
-
-### Q: Is there a way to specify the tile width and height for ImageComposite (rather that the default 24 pixels)?
-
-Yes, you can pass along the width and height (as optional) keyword arguments e.g.
-
-``` ruby
-ImageComposite.new( 3, 2,  width: 32, height: 32 )   # 3x2 grid with 32x32px tiles
-```
-
-<!--
-https://old.reddit.com/r/CryptoPunksDev/comments/rzqipr/compositeimage_from_pixelart/
 -->
 
 
