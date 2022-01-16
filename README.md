@@ -82,7 +82,7 @@ punks.each_with_index do |punk,i|
 
   phunks << phunk  ## add to composite       
 end
-``` ruby
+```
 
 (Re)run the script and voila - you will get 20 000 phunk images in two series in the 24x24 and 192x192 (with 8x zoom) format e.g.  `phunk-0.png`, `phunk-0@8x.png`, `phunk-1.png`, `phunk-1@8x.png`, and so on.
 
