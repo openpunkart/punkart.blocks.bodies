@@ -21,11 +21,9 @@ comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/pjl8vw/am_i_allow
 -->
 
 
-## Q: Can anyone explain the "Flex-How-Stupid-AND-Rich-I-Am?!"  [Crypto] Punks?  Why pay million dollars for a free public domain 24×24 pixel image? 
+## Q: Can anyone explain the "Flex-How-Stupid-AND-Rich-I-Am?!"  [Crypto] Punks?  Why pay hundred thousands of dollars for a free public domain 24×24 pixel image? 
 
-**A:**   
-
-  As a public service announcement let's restate what might get lost in the programming minutiae:
+**A:**  As a public service announcement let's restate what might get lost in the programming minutiae:
 
   Yes, CryptoPunks is a con-artist financial fraud. The Emperor has no clothes. Let's start with what you "own" when you buy a CryptoPunk [token].
 
@@ -49,7 +47,8 @@ comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/pjl8vw/am_i_allow
 >  redraw "by hand" in minutes], to which we [claim to] own exclusive
 > copyrights, can be found at: https://larvalabs.com/cryptopunks
 
-  And so on and so forth. What's your take?   
+  And so on and so forth. What's your take?  
+
 
 <!--
 comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/ppb0fh/public_service_announcement_yes_cryptopunks_is_a/
