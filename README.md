@@ -93,8 +93,17 @@ https://old.reddit.com/r/CryptoPunksDev/comments/s4hyny/q_how_can_i_generate_10_
 -->
 
 
+### Q: Is there a way to specify the tile width and height for ImageComposite (rather that the default 24 pixels)?
 
+Yes, you can pass along the width and height (as optional) keyword arguments e.g.
 
+``` ruby
+ImageComposite.new( 3, 2,  width: 32, height: 32 )   # 3x2 grid with 32x32px tiles
+```
+
+<!--
+https://old.reddit.com/r/CryptoPunksDev/comments/rzqipr/compositeimage_from_pixelart/
+-->
 
 
 
