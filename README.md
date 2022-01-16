@@ -1,2 +1,12 @@
-Currency Art Collection Quick Starter - Generate Your Own Currency (Modern Art) Spot Painting Collections
 
+# (Pixel) Punk Frequently Asked Questions (F.A.Q.) and Answers
+
+
+
+
+
+
+
+## Questions? Comments?
+
+Post them on the [CryptoPunksDev reddit](https://old.reddit.com/r/CryptoPunksDev). Thanks.
