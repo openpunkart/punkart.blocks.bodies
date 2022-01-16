@@ -18,7 +18,7 @@ The punk ethos is that you do-it-yourself and you don't care what others think (
 
 <!--
 comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/pjl8vw/am_i_allowed_to_create_and_sell_my_own_cryptopunks/
----
+-->
 
 
 ## Q: Can anyone explain the "Flex-How-Stupid-AND-Rich-I-Am?!"  [Crypto] Punks?  Why pay million dollars for a free public domain 24×24 pixel image? 
