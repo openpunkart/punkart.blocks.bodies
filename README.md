@@ -6,6 +6,25 @@
 
 ## Pixel Art Programming
 
+
+### **Q**: How can I generate 10 000 (basic) bored ape images in 800x800px from the all-in-one composite image in the 50x50 format?
+
+An answer to the question in [**10 000 Basic Bored Apes Club (50x50) - Free All-In-One Image Composite Download (5000x5000px) - basicboredapeclub.png (~2MB)**](https://old.reddit.com/r/CryptoPunksDev/comments/sbpduc/10_000_basic_bored_apes_club_50x50_free_allinone/):
+
+The bored ape (tiles) in the composite image are in 50x50px.  
+To get to 800x800px use a 16x zoom (50px x 16 = 800px). Try:
+
+``` ruby
+require 'pixelart'
+     
+apes = ImageComposite.read( "basicboredapes50x50.png" )  ## read in ape composite
+
+apes.each_with_index do |ape,i|
+  ape.zoom(16).save( "ape-#{i}.png")
+end
+```
+
+
 ### **Q**: How can I generate 10 000 left-looking p(h)unks in any size (2x, 4x, 8x, etc.) individually, that is, one-by-one?
 
 See [**Free Phunks Composite Download (~800k) - Get All 10 000 Left-Looking ("Mirrored") CryptoPunks In An All-In-One Image (2400x2400)**](https://old.reddit.com/r/CryptoPunksDev/comments/orv98e/free_phunks_composite_download_800k_get_all_10/) 
