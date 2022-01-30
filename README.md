@@ -9,10 +9,9 @@
 
 ### **Q**: How can I generate 10 000 (basic) bored ape images in 800x800px from the all-in-one composite image in the 50x50 format?
 
-An answer to the question in [**10 000 Basic Bored Apes Club (50x50) - Free All-In-One Image Composite Download (5000x5000px) - basicboredapeclub.png (~2MB)**](https://old.reddit.com/r/CryptoPunksDev/comments/sbpduc/10_000_basic_bored_apes_club_50x50_free_allinone/):
+An answer to the question in [**10 000 Basic Bored Apes Club (50×50) - Free All-In-One Image Composite Download (5000×5000px) - basicboredapeclub.png (~2MB)**](https://old.reddit.com/r/CryptoPunksDev/comments/sbpduc/10_000_basic_bored_apes_club_50x50_free_allinone/):
 
-The bored ape (tiles) in the composite image are in 50x50px.  
-To get to 800x800px use a 16x zoom (50px x 16 = 800px). Try:
+The bored ape (tiles) in the composite image are in 50×50px. To get to 800×800px use a 16x zoom (50px × 16 = 800px). Try:
 
 ``` ruby
 require 'pixelart'
@@ -27,7 +26,7 @@ end
 
 ### **Q**: How can I generate 10 000 left-looking p(h)unks in any size (2x, 4x, 8x, etc.) individually, that is, one-by-one?
 
-See [**Free Phunks Composite Download (~800k) - Get All 10 000 Left-Looking ("Mirrored") CryptoPunks In An All-In-One Image (2400x2400)**](https://old.reddit.com/r/CryptoPunksDev/comments/orv98e/free_phunks_composite_download_800k_get_all_10/) 
+See [**Free Phunks Composite Download (~800k) - Get All 10 000 Left-Looking ("Mirrored") CryptoPunks In An All-In-One Image (2400×2400)**](https://old.reddit.com/r/CryptoPunksDev/comments/orv98e/free_phunks_composite_download_800k_get_all_10/) 
 for a start and change the loop in the [**phunks script**](https://github.com/cryptopunksnotdead/cryptopunks/blob/master/phunks/phunks.rb) from
 
 ``` ruby
@@ -36,7 +35,7 @@ punks.each do |punk|
 end
 ```
 
-to save the phunks one-by-one in 24x24 and in 192x192 (with 8x zoom) try:
+to save the phunks one-by-one in 24×24 and in 192×192 (with 8x zoom) try:
 
 ``` ruby
 punks.each_with_index do |punk,i|
@@ -62,7 +61,7 @@ https://old.reddit.com/r/CryptoPunksDev/comments/s4hyny/q_how_can_i_generate_10_
 Yes, you can pass along the width and height (as optional) keyword arguments e.g.
 
 ``` ruby
-ImageComposite.new( 3, 2,  width: 32, height: 32 )   # 3x2 grid with 32x32px tiles
+ImageComposite.new( 3, 2,  width: 32, height: 32 )   # 3×2 grid with 32×32px tiles
 ```
 
 <!--
@@ -80,11 +79,11 @@ https://old.reddit.com/r/CryptoPunksDev/comments/rzqipr/compositeimage_from_pixe
 
 About the originals by LarvaLabs - the first question is: Are they really original?  See the [**Blockheads (Anno 2013)**](https://github.com/pixelartexchange/pixelart-howto/tree/master/blockheads) and I am sure there are many more.
 
-I'd say you cannot copyright a trivial 24x24 pixel image - there might be a point about the complete collection (like you can copyright a complete database but not individual facts).
+I'd say you cannot copyright a trivial 24×24 pixel image - there might be a point about the complete collection (like you can copyright a complete database but not individual facts).
 
 Anyways, the irony is of course the name, that is, CryptoPunks.
 
-The punk ethos is that you do-it-yourself and you don't care what others think (oh, that looks so cheap and so on).  And crypto - of course - is by definition a law-less "decentralised" fraudster paradise where anything goes. And yes, selling 24x24 pixel images by itself is a fraud and shame on the LarvaLabs fraudsters¹ for not stopping the madness but raking in the millions $$$ from greater fools.
+The punk ethos is that you do-it-yourself and you don't care what others think (oh, that looks so cheap and so on).  And crypto - of course - is by definition a law-less "decentralised" fraudster paradise where anything goes. And yes, selling 24×24 pixel images by itself is a fraud and shame on the LarvaLabs fraudsters¹ for not stopping the madness but raking in the millions $$$ from greater fools.
 
 ¹: Please remember - a (blockchain) token - is nothing special - it is a database entry updated (secured) by signed transactions. Yes, the emperor has no clothes. See [**Come See My Collection**](https://www.ic.unicamp.br/~stolfi/bitcoin/2021-04-02-come-see-my-collection.html)  from a more honest computer scientist  (shame on Matt Hall and John Watkinson both have computer science university degrees - so they for sure know what they are doing and how a database works).
 
