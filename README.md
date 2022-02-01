@@ -28,7 +28,7 @@ end
 
 The image class in the pixelart library / gem / package includes a `Image#transparent` method that tries to remove the background - that is - turning the background color(s) into the transparent color (0).
 
-Note - The [**Image#transparent machinery**](https://github.com/pixelartexchange/pixelart/blob/master/pixelart/lib/pixelart/transparent.rb) is NOT using a neural network or such but for now a simple algorithm that may or may not work for different images - in the simple case it will take the color of pixel at the x/y-coord 0/0 and will turn all pixels with that color into transparent (0) - thus - removing the background (if it is a single solid color).
+Note - The [**Image#transparent machinery**](https://github.com/pixelartexchange/pixelart/blob/master/pixelart/lib/pixelart/transparent.rb) is NOT using a neural network or such but for now a simple algorithm that may or may not work for different images - in the simple case it will take the color of the pixel at the x/y-coord 0/0 and will turn all pixels with that color into transparent (0) - thus - removing the background (if it is a single solid color).
 
 Now try and change
 
