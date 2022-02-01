@@ -160,6 +160,8 @@ that the "original" V2 or whatever pixel punks in the 24x24 format are as worthl
 
   And so on and so forth. What's your take?  
 
+Tip: Yes, you can. Draw your own punks "by hand". See [**Youtube Video - How to Make (Crypto) 2D Alien Pixel Punk #3100 in 3D Cubes w/ Blender from Scratch / Zero in 60 Seconds**](https://www.youtube.com/watch?v=VaLaBYJl4u0) or any other of the hundred tutorials online.
+
 
 <!--
 comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/ppb0fh/public_service_announcement_yes_cryptopunks_is_a/
