@@ -128,10 +128,10 @@ comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/pjl8vw/am_i_allow
 
   There's nothing decentralized or trustless.  You have to trust the central issuer LarvaLabs that you own a picture / image of punk.
 
-   And the fact is that LavraLabs actually tell you that you don't. To quote:
+   And the fact is that the LavraLabs crypto bros - Matt Hall and John Watkinson -  actually tell you that you don't. To quote:
 
 >   My name is Mordecai Goldstein and I am the General Counsel
-> of Larva Labs LLC [- a multi-million dollar crypto fraudster
+> of Larva Labs LLC [- a multi-million dollar crypto (con-art) fraudster
 > operator].
 >
 > [..]
