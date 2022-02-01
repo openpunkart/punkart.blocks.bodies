@@ -107,11 +107,29 @@ Anyways, the irony is of course the name, that is, CryptoPunks.
 
 The punk ethos is that you do-it-yourself and you don't care what others think (oh, that looks so cheap and so on).  And crypto - of course - is by definition a law-less "decentralised" fraudster paradise where anything goes. And yes, selling 24×24 pixel images by itself is a fraud and shame on the LarvaLabs fraudsters¹ for not stopping the madness but raking in the millions $$$ from greater fools.
 
-¹: Please remember - a (blockchain) token - is nothing special - it is a database entry updated (secured) by signed transactions. Yes, the emperor has no clothes. See [**Come See My Collection**](https://www.ic.unicamp.br/~stolfi/bitcoin/2021-04-02-come-see-my-collection.html)  from a more honest computer scientist  (shame on Matt Hall and John Watkinson both have computer science university degrees - so they for sure know what they are doing and how a database works).
+¹: Please remember - a (blockchain) token - is nothing special - it is a database entry updated (secured) by signed transactions. Yes, the emperor has no clothes. See [**Come See My Collection**](https://www.ic.unicamp.br/~stolfi/bitcoin/2021-04-02-come-see-my-collection.html)  from a more honest computer scientist  - shame on Matt Hall and John Watkinson both have computer science university degrees so the crypto bros for sure know what they are doing and how a database works - or a con-art (blockchain) token scam / fraud.
 
 <!--
 comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/pjl8vw/am_i_allowed_to_create_and_sell_my_own_cryptopunks/
 -->
+
+### Q: Are only the V2 [Crypto] Punks the "Official" [Crypto] Punks? What about V1? Or More Punks? Or Phunks? Or X-Punks? Or Wunks? Or Bunks? Or Zunks? 
+
+**A**   Public Service Announcement - Yes, all punks are good punks -  even if the Larva Labs crypto bros / fraudsters claim 
+only its own exclusive (token) collection is "official" punk.
+
+On Jan/25th, 2022 the Larva Labs crypto bros / fraudsters - Matt Hall and John Watkinson -  posted:
+
+> Public Service [Self-Enrichment] Announcement: CryptoPunks V1.0 are not official
+> Cryptopunks. We don't like them [anymore], and we've got 1,000 of
+> them [to dump] ... so draw your own conclusions. 
+> Any proceeds [of the sell-off] will be used to purchase [and pump up the] real Cryptopunks [V2.0]!
+>
+> -- [Larva Labs Crypto Bros / Fraudsters News](https://twitter.com/larvalabs/status/1486092138534387712?cxt=HHwWgIC-zaS71J8pAAAA)
+
+
+Why not post a less self-serving public service announcement?  Why not tell the world -  yes, the emperor has no clothes - that is, 
+that the "original" V2 or whatever pixel punks in the 24x24 format are as worthless as the V1 series? What's your take?
 
 
 ### Q: Can anyone explain the "Flex-How-Stupid-AND-Rich-I-Am?!"  [Crypto] Punks?  Why pay hundred thousands of dollars for a free public domain 24×24 pixel image? 
