@@ -118,7 +118,7 @@ comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/pjl8vw/am_i_allow
 **A:**   Public Service Announcement - Yes, all punks are good punks -  even if the Larva Labs crypto bros / fraudsters claim 
 only its own exclusive (token) collection is "official" punk.
 
-On Jan/25th, 2022 the Larva Labs crypto bros / fraudsters - Matt Hall and John Watkinson -  posted:
+On January 25th, 2022 the Larva Labs crypto bros / fraudsters - Matt Hall and John Watkinson -  posted:
 
 > Public Service [Self-Enrichment] Announcement: CryptoPunks V1.0 are not official
 > Cryptopunks. We don't like them [anymore], and we've got 1,000 of
