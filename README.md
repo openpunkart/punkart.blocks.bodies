@@ -7,7 +7,7 @@
 ## Pixel Art Programming
 
 
-### **Q**: How can I generate 10 000 (basic) bored ape images in 800x800px from the all-in-one composite image in the 50x50 format?
+### **Q**: How can I generate 10 000 (bored) ape images in 800x800px from the all-in-one composite image in the 50x50 format?
 
 An answer to the question in [**10 000 Basic Bored Apes Club (50×50) - Free All-In-One Image Composite Download (5000×5000px) - basicboredapeclub.png (~2MB)**](https://old.reddit.com/r/CryptoPunksDev/comments/sbpduc/10_000_basic_bored_apes_club_50x50_free_allinone/):
 
