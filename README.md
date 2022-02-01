@@ -140,7 +140,7 @@ that the "original" V2 or whatever pixel punks in the 24x24 format are as worthl
 
    The only thing that you "own" is the private 256-bit integer number that you create (for free) on your own computer and that you MUST keep secret, that is, your private key.
 
-   From the 256-bit integer number (private key) you get a "free" public key and public Ethereum account  - the account gets derived (calculated) via Elliptic Curve Cryptography from the public key. (Tip: See [**Derive the Ethereum (Elliptic Curve) Public Key from the Private Key**](https://github.com/rubycoco/blockchain/tree/master/crypto-lite#derive-the-ethereum-elliptic-curve-public-key-from-the-private-key) or any other of the many hundred (or thousands) crypto tutorials online.) 
+   From the 256-bit integer number (private key) you get a "free" public key and public Ethereum account  - the account gets derived (calculated) via Elliptic Curve Cryptography from the public key¹.  
 
    Anyways, if you now buy a CryptoPunks token via the CryptoPunksMarket contract / service - all you get is an entry in a database that you are now a "certified" CryptoPunks owner and you get assigned an index number (between 0 and 9999).   That's it.
 
@@ -155,12 +155,19 @@ that the "original" V2 or whatever pixel punks in the 24x24 format are as worthl
 > [..]
 >
 > The original [24×24 8-bit pixel] images [that any 6-year old can
->  redraw "by hand" in minutes], to which we [claim to] own exclusive
+>  redraw "by hand" in minutes²], to which we [claim to] own exclusive
 > copyrights, can be found at: https://larvalabs.com/cryptopunks
 
   And so on and so forth. What's your take?  
 
-Tip: Yes, you can. Draw your own punks "by hand". See [**Youtube Video - How to Make (Crypto) 2D Alien Pixel Punk #3100 in 3D Cubes w/ Blender from Scratch / Zero in 60 Seconds**](https://www.youtube.com/watch?v=VaLaBYJl4u0) or any other of the hundred tutorials online.
+
+¹: Tip: See [**Derive the Ethereum (Elliptic Curve) Public Key from the Private Key and Generate the Ethereum Address from the (Elliptic Curve) Public Key**](https://github.com/rubycoco/blockchain/tree/master/crypto-lite#derive-the-ethereum-elliptic-curve-public-key-from-the-private-key) or any other of the many hundred (or thousands) crypto tutorials online.) It starts:
+
+> A private key in ethereum is a 32-byte (256-bit) unsigned / positive integer number.
+> Or more precise the private key is a random number between 1 and the order of the elliptic curve secp256k1 ...
+
+²: Tip: Yes, you can. Draw your own punks "by hand". See [**Youtube Video - How to Make (Crypto) 2D Alien Pixel Punk #3100 in 3D Cubes w/ Blender from Scratch / Zero in 60 Seconds**](https://www.youtube.com/watch?v=VaLaBYJl4u0) or any other of the hundred tutorials online.
+
 
 
 <!--
