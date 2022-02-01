@@ -140,7 +140,7 @@ that the "original" V2 or whatever pixel punks in the 24x24 format are as worthl
 
    The only thing that you "own" is the private 256-bit integer number that you create (for free) on your own computer and that you MUST keep secret, that is, your private key.
 
-   From the 256-bit integer number (private key) you get a "free" public key and public Ethereum account  - the account gets derived (calculated) via Elliptic Curve Cryptography from the public key.
+   From the 256-bit integer number (private key) you get a "free" public key and public Ethereum account  - the account gets derived (calculated) via Elliptic Curve Cryptography from the public key. (Tip: See [**Derive the Ethereum (Elliptic Curve) Public Key from the Private Key**](https://github.com/rubycoco/blockchain/tree/master/crypto-lite#derive-the-ethereum-elliptic-curve-public-key-from-the-private-key) or any other of the many hundred (or thousands) crypto tutorials online.) 
 
    Anyways, if you now buy a CryptoPunks token via the CryptoPunksMarket contract / service - all you get is an entry in a database that you are now a "certified" CryptoPunks owner and you get assigned an index number (between 0 and 9999).   That's it.
 
