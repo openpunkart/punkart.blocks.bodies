@@ -113,9 +113,9 @@ The punk ethos is that you do-it-yourself and you don't care what others think (
 comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/pjl8vw/am_i_allowed_to_create_and_sell_my_own_cryptopunks/
 -->
 
-### Q: Are only the V2 [Crypto] Punks the "Official" [Crypto] Punks? What about V1? Or More Punks? Or Phunks? Or X-Punks? Or Wunks? Or Bunks? Or Zunks? 
+### Q: Are only the V2 [Crypto] Punks the "Official" [Crypto] Punks? What about V1? Or More Punks? Or Phunks? Or X Punks? Or Wunks? Or Bunks? Or Zunks? 
 
-**A**   Public Service Announcement - Yes, all punks are good punks -  even if the Larva Labs crypto bros / fraudsters claim 
+**A:**   Public Service Announcement - Yes, all punks are good punks -  even if the Larva Labs crypto bros / fraudsters claim 
 only its own exclusive (token) collection is "official" punk.
 
 On Jan/25th, 2022 the Larva Labs crypto bros / fraudsters - Matt Hall and John Watkinson -  posted:
