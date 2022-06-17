@@ -107,7 +107,7 @@ actual statement from intellectual property (or is that monopoly rights) attorne
 
 > In creating the [Matt & John's®] punks, Larva Labs' [Matt Hall & John Watkinson] established 98 individual graphic elements in 8-bit-style pixel art [in a 24x24 canvas]. Then they ran a software program to randomly generate the images that would become the individual [Matt & John's®] punks. Each punk is just a machine-generated amalgamation of certain individual elements. Few, if any, of the individual pixel art elements contain sufficient creative expression to qualify as being copyrightable. Randomly mixing uncopyrightable elements does not necessarily create copyrightable expression, particularly without human involvement. 
 >
->  (Source: [Punks v1 Legal Position, A Document Prepared By Attorneys based in Los Angeles](https://v1punks.gitbook.io/cryptopunks-v1-wiki/cryptopunks-v1-legal-position))
+>  (Source: [Punks v1 Legal Position, A Document Prepared By Attorneys in Los Angeles](https://v1punks.gitbook.io/cryptopunks-v1-wiki/cryptopunks-v1-legal-position))
 
 The attorneys continue:
 
