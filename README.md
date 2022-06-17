@@ -1,6 +1,5 @@
 
-# (Pixel) Punk Frequently Asked Questions (F.A.Q.) and Answers
-
+# Punk (Pixel) Characters / Heads - Frequently Asked Questions (F.A.Q.) and Answers
 
 
 
@@ -95,15 +94,31 @@ https://old.reddit.com/r/CryptoPunksDev/comments/rzqipr/compositeimage_from_pixe
 
 ## Legal & Financial (Con-Art) Fraud
 
-### Q: Am I allowed to create and sell my own [Crypto] Punks?
+### Q: Am I allowed to create and sell my own [crypto] punk (pixel) characters / heads? Are punk (pixel) characters / heads (in 24x24) copyrightable?
 
 **A:** I am not a lawyer but let's get real. Yes, in a free world you can of course create and sell your own punks.
 
-About the originals by LarvaLabs - the first question is: Are they really original?  See the [**Blockheads (Anno 2013)**](https://github.com/pixelartexchange/pixelart-howto/tree/master/blockheads) and I am sure there are many more.
+About the originals by the LarvaLabs bros - Matt Hall & John Watkinson  - the first question to ask: Are they really original?  See the [**Blockheads (Anno 2013)**](https://github.com/pixelartexchange/pixelart-howto/tree/master/blockheads) and I am sure there are many more.
 
 I'd say you cannot copyright a trivial 24×24 pixel image - there might be a point about the complete collection (like you can copyright a complete database but not individual facts).
 
-Anyways, the irony is of course the name, that is, CryptoPunks.
+Thanks to and courtesy of Hemba the Anonymous Matt & John's® Punks V1 "Founder" / Head an
+actual statement from intellectual property (or is that monopoly rights) attorneys from Los Angeles:
+
+> In creating the [Matt & John's®] punks, Larva Labs' [Matt Hall & John Watkinson] established 98 individual graphic elements in 8-bit-style pixel art [in a 24x24 canvas]. Then they ran a software program to randomly generate the images that would become the individual [Matt & John's®] punks. Each punk is just a machine-generated amalgamation of certain individual elements. Few, if any, of the individual pixel art elements contain sufficient creative expression to qualify as being copyrightable. Randomly mixing uncopyrightable elements does not necessarily create copyrightable expression, particularly without human involvement. 
+>
+>  (Source: [Punks v1 Legal Position, A Document Prepared By Attorneys based in Los Angeles](https://v1punks.gitbook.io/cryptopunks-v1-wiki/cryptopunks-v1-legal-position))
+
+The attorneys continue:
+
+> Are Matt & John's® punks copyrighted [or in the public domain]? It's an open question - 
+> one that probably would require a court to decide. [...]
+> Larva/Yuga Labs probably don't want a court making that determination for them.
+
+
+
+
+Anyways, the irony is of course the name, that is, Crypto Punks.
 
 The punk ethos is that you do-it-yourself and you don't care what others think (oh, that looks so cheap and so on).  And crypto - of course - is by definition a law-less "decentralised" fraudster paradise where anything goes. And yes, selling 24×24 pixel images by itself is a fraud and shame on the LarvaLabs fraudsters¹ for not stopping the madness but raking in the millions $$$ from greater fools.
 
