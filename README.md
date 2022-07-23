@@ -13,7 +13,7 @@ Humans (m/f) - 3 skin tones (dark/mid/light)
 Male -
 ![](basic/human1-male.png)
 ![](basic/human2-male.png)
-![](basic/human3-male.png),  <br>
+![](basic/human3-male.png),
 mid -
 ![](basic/human1-male-mid.png)
 ![](basic/human2-male-mid.png)
@@ -23,7 +23,7 @@ mid -
 Female - 
 ![](basic/human1-female.png)
 ![](basic/human2-female.png)
-![](basic/human3-female.png),  <br>
+![](basic/human3-female.png),
 big -
 ![](basic/human1-female-big.png)
 ![](basic/human2-female-big.png)
@@ -66,15 +66,13 @@ _Brudda (& Sista), Welcome to the Hood_
 
 _National (Selection) Teams & Football Clubs From Around the World_
 
-National (Selection) Teams
-
+National (Selection) Teams - 
 ![](football/argentina.png)
 ![](football/brazil.png)
 ![](football/france.png)
 ![](football/portugal.png)
 
-Football Clubs
-
+Football Clubs -
 ![](football/arsenal.png)
 ![](football/liverpool.png)
 ![](football/manchester_city.png)
@@ -91,8 +89,7 @@ Football Clubs
 
 ### Basketball Jersey Series  (32×32)
 
-U.S. National Basketball Association (NBA)
-
+U.S. National Basketball Association (NBA) -
 ![](basketball/atlanta_hawks.png)
 ![](basketball/boston_celtics.png)
 ![](basketball/brooklyn_nets.png)
