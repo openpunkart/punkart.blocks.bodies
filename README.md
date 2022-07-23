@@ -27,7 +27,7 @@ Female -
 big -
 ![](basic/human1-female-big.png)
 ![](basic/human2-female-big.png)
-![](basic/human3-female-big.png)
+![](basic/human3-female-big.png).
 
 
 
