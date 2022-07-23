@@ -10,20 +10,20 @@
 
 Humans (m/f) - 3 skin tones (dark/mid/light)
 
-Male <br>
+Male -
 ![](basic/human1-male.png)
 ![](basic/human2-male.png)
-![](basic/human3-male.png)  <br>
+![](basic/human3-male.png),  <br>
 mid -
 ![](basic/human1-male-mid.png)
 ![](basic/human2-male-mid.png)
-![](basic/human3-male-mid.png)
+![](basic/human3-male-mid.png).
 
 
-Female <br>
+Female - 
 ![](basic/human1-female.png)
 ![](basic/human2-female.png)
-![](basic/human3-female.png)  <br>
+![](basic/human3-female.png),  <br>
 big -
 ![](basic/human1-female-big.png)
 ![](basic/human2-female-big.png)
