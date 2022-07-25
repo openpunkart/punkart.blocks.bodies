@@ -11,33 +11,36 @@
 Humans (m/f) - 3 skin tones (dark/mid/light)
 
 Male -
-![](basic/human1-male.png)
-![](basic/human2-male.png)
-![](basic/human3-male.png),
+xs - ![](basic/human1-male-xs.png)
+![](basic/human2-male-xs.png)
+![](basic/human3-male-xs.png),
 mid -
-![](basic/human1-male-mid.png)
-![](basic/human2-male-mid.png)
-![](basic/human3-male-mid.png).
+![](basic/human1-male-m.png)
+![](basic/human2-male-m.png)
+![](basic/human3-male-m.png).
 
 
-Female - 
-![](basic/human1-female.png)
-![](basic/human2-female.png)
-![](basic/human3-female.png),
-big -
-![](basic/human1-female-big.png)
-![](basic/human2-female-big.png)
-![](basic/human3-female-big.png).
+Female -
+mid - ![](basic/human1-female-m.png)
+![](basic/human2-female-m.png)
+![](basic/human3-female-m.png),
+large - ![](basic/human1-female-l.png)
+![](basic/human2-female-l.png)
+![](basic/human3-female-l.png),
+big xxl -
+![](basic/human1-female-xxl.png)
+![](basic/human2-female-xxl.png)
+![](basic/human3-female-xxl.png).
 
 
 
 More -
 Zombies (m/f)
-![](basic/zombie-male.png) ![](basic/zombie-female.png) ![](basic/zombie-female-big.png),
+![](basic/zombie-male-xs.png) ![](basic/zombie-male-m.png) ![](basic/zombie-female-m.png)  ![](basic/zombie-female-l.png) ![](basic/zombie-female-xxl.png),
 Apes (m/f),
-![](basic/ape-male.png) ![](basic/ape-female.png) ![](basic/ape-female-big.png),
+![](basic/ape-male-xs.png) ![](basic/ape-male-m.png) ![](basic/ape-female-m.png) ![](basic/ape-female-l.png) ![](basic/ape-female-xxl.png),
 Aliens (m/f)
-![](basic/alien-male.png) ![](basic/alien-female.png) ![](basic/alien-female-big.png).
+![](basic/alien-male-xs.png) ![](basic/alien-male-m.png) ![](basic/alien-female-m.png) ![](basic/alien-female-l.png) ![](basic/alien-female-xxl.png).
 
 
 
@@ -66,7 +69,7 @@ _Brudda (& Sista), Welcome to the Hood_
 
 _National (Selection) Teams & Football Clubs From Around the World_
 
-National (Selection) Teams - 
+National (Selection) Teams -
 ![](football/argentina.png)
 ![](football/brazil.png)
 ![](football/france.png)
