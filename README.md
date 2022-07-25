@@ -49,7 +49,7 @@ Aliens (m/f)
 _(Black) Smoking & Dinner Jackets_
 
 ![](meninblack/suit1-black.png)
-![](meninblack/suit1-black.png)
+![](meninblack/suit2-black.png)
 
 
 ###  Hoodies Series (32×32)
