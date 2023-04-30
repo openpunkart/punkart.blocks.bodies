@@ -1,7 +1,7 @@
 
-[Vol. 1 - Heads](https://github.com/openpunkart/punks.blocks) ·
-[Vol. 2 - Bodies & More](https://github.com/openpunkart/punks.bodies) ·
-[Vol. 3 - Black & White (1-Bit)](https://github.com/openpunkart/punks.black)
+[Vol. 1 - Heads](https://github.com/openpunkart/punkart.blocks) ·
+[Vol. 2 - Bodies & More](https://github.com/openpunkart/punkart.blocks.bodies) ·
+[Vol. 3 - Black & White (1-Bit)](https://github.com/openpunkart/punkart.blocks.black)
 
 
 # Punk Building Block Series  Vol 2 - Bodies & More
